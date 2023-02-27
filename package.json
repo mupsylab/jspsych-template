@@ -75,7 +75,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "vue-cli-service build && electron .",
-    "pack": "electron-builder -p always"
+    "pack": "electron-builder -p always",
+    "zip": "npm run build && rimraf dist.zip && node export-zip.js"
   },
   "dependencies": {
     "@jspsych/plugin-call-function": "^1.1.2",
@@ -98,6 +99,7 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "archiver": "^5.3.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "electron": "^23.0.0",
     "electron-builder": "^23.6.0",

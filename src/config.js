@@ -5,6 +5,7 @@ module.exports = {
     autoId: false,
     debug: true,
     upload: true,
+    maxQuesNum: 6,
     assets: [
         "imgs/1.png",
         "imgs/2.png",

@@ -12,12 +12,16 @@ import jsPsychSurveyHtmlForm from '@jspsych/plugin-survey-html-form';
 import Config from "@/config";
 import { createApp, defineAsyncComponent, ref } from "vue";
 
+const addHtml = (html) => {
+  if (Config.html.indexOf(html) < 0) Config.html.push(html);
+}
 const session = new Session({
   startTime: new Date().toLocaleDateString() + "-" + new Date().toLocaleTimeString(),
   experId: Config.experId,
   subjIdx: "002",
   finish: false
 });
+// set file name
 session.t = [
   "getFileName", () => {
     return `${Config.experId}-ver${Config.version}-subj${session.getInfo("subjIdx")}`
@@ -51,6 +55,7 @@ const jsPsych = initJsPsych({
     }
   }
 });
+// set data type
 session.t = [
   "getData", () => {
     return jsPsych
@@ -232,7 +237,7 @@ timeline.push({
   timeline: [{
     type: jsPsychSurveyHtmlForm,
     html: () => {
-      return session.t["q"].renderNext(6);
+      return session.t["q"].renderNext(Config.maxQuesNum);
     },
     on_load: () => {
       session.t["q"].initScript();
