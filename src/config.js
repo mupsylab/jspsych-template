@@ -3,8 +3,8 @@ module.exports = {
     version: "1",
     groupNum: 1,
     autoId: false,
-    debug: true,
-    upload: true,
+    debug: process.env.VUE_APP_DEBUG,
+    upload: process.env.VUE_APP_UPLOAD,
     assets: [
         "imgs/1.png",
         "imgs/2.png",

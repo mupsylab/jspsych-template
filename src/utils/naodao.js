@@ -138,7 +138,7 @@ class Naodao {
         event.returnValue = '';
     }
     unload() {
-        getData = this.getData;
+        const getData = this.getData;
         localStorage.setItem("tmpD" + new Date().getTime().toString(), JSON.stringify(
             Object.assign({}, {
                 __beginDate: this.__beginDate,

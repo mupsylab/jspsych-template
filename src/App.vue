@@ -12,7 +12,9 @@ export default {
       msg: "foo"
     }
   },
-  mounted() {},
+  mounted() {
+    
+  },
   props: {},
   methods: {},
   created() {

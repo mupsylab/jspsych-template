@@ -71,10 +71,10 @@
   "main": "src/electron-main.js",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve --mode dev",
+    "build": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint",
-    "start": "vue-cli-service build && electron .",
+    "start": "vue-cli-service build --mode prod && electron .",
     "pack": "electron-builder -p always"
   },
   "dependencies": {
